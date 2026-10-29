@@ -1,0 +1,4 @@
+build/
+release/
+tools/names.pkl
+__pycache__/
