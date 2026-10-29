@@ -41,29 +41,37 @@ def font(name, size):
     return ImageFont.truetype('C:/Windows/Fonts/' + name, size)
 
 
-out = sys.argv[1]
+def background(w, h):
+    """Diagonal ink-blue gradient."""
+    img = Image.new('RGB', (w, h))
+    px = img.load()
+    for y in range(h):
+        for x in range(0, w, 4):
+            t = min(1, (x / w) * 0.6 + (y / h) * 0.6)
+            c = tuple(round(a + (b - a) * t) for a, b in zip(INK, INK_DEEP))
+            for k in range(min(4, w - x)): px[x + k, y] = c
+    return img
 
-# Fluffy preview card: diagonal ink gradient, badge left, text left-aligned.
-W, H = 1280, 720
-card = Image.new('RGB', (W, H))
-px = card.load()
-for y in range(H):
-    for x in range(0, W, 4):
-        t = min(1, (x / W) * 0.6 + (y / H) * 0.6)
-        c = tuple(round(a + (b - a) * t) for a, b in zip(INK, INK_DEEP))
-        for k in range(4): px[x + k, y] = c
-b = badge(300)
-card.paste(b, (110, (H - 300) // 2), b)
-d = ImageDraw.Draw(card)
-x0 = 470
-d.text((x0, 222), 'TLOU', font=font('segoeuib.ttf', 40), fill=AMBER)
-d.text((x0 - 4, 262), 'Outfit Changer', font=font('segoeuib.ttf', 84), fill=WHITE)
-d.rectangle([x0, 386, x0 + 90, 391], fill=AMBER)
-body = font('segoeui.ttf', 30)
-d.text((x0, 418), 'Every Joel & Ellie skin, on any save', font=body, fill=SOFT)
-d.text((x0, 458), 'No story completion. No points spent.', font=body, fill=SOFT)
-d.text((x0, 520), 'Extras > Skins  \u00b7  in-game Skins menu', font=font('segoeui.ttf', 24), fill=DIM)
-card.save(os.path.join(out, 'screenshot.png'))
 
-# Square logo: just the badge.
-badge(512).save(os.path.join(out, 'logo.png'))
+def card():
+    """Fluffy preview card: badge left, text left-aligned."""
+    W, H = 1280, 720
+    img = background(W, H)
+    b = badge(300)
+    img.paste(b, (110, (H - 300) // 2), b)
+    d = ImageDraw.Draw(img)
+    x0 = 470
+    d.text((x0, 222), 'TLOU', font=font('segoeuib.ttf', 40), fill=AMBER)
+    d.text((x0 - 4, 262), 'Outfit Changer', font=font('segoeuib.ttf', 84), fill=WHITE)
+    d.rectangle([x0, 386, x0 + 90, 391], fill=AMBER)
+    body = font('segoeui.ttf', 30)
+    d.text((x0, 418), 'Every Joel & Ellie skin, on any save', font=body, fill=SOFT)
+    d.text((x0, 458), 'No story completion. No points spent.', font=body, fill=SOFT)
+    d.text((x0, 520), 'Extras > Skins  \u00b7  in-game Skins menu', font=font('segoeui.ttf', 24), fill=DIM)
+    return img
+
+
+if __name__ == '__main__':
+    out = sys.argv[1]
+    card().save(os.path.join(out, 'screenshot.png'))
+    badge(512).save(os.path.join(out, 'logo.png'))  # square logo: just the badge

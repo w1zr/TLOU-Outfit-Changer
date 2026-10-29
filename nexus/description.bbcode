@@ -1,0 +1,65 @@
+[size=5][b]TLOU Outfit Changer[/b][/size]
+
+Wear any Joel and Ellie outfit, and every weapon skin, in [b]The Last of Us Part I[/b]. [b]You don't need to finish the story first[/b], and you don't spend any points.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Extras > Skins is open on any save[/b], including a fresh profile that has never finished the game.
+[*][b]The in-game Skins menu is open too[/b], so you can change outfits whenever you want.
+[*][b]Every skin is already owned:[/b] all 33 Ellie outfits, every Joel outfit, the backpacks and Ellie's hat, and the weapon skins for Ellie's bow and pistol and Joel's 9mm and shotgun.
+[*][b]No points spent.[/b] Your points total isn't touched, so you can still use it for the other bonuses.
+[*][b]Uses the game's own skin system and menus.[/b] No model or texture files are replaced.
+[*]Gameplay Modifiers and trophies stay as they are. The mod never writes save or profile files.
+[*]Works alongside [url=https://www.nexusmods.com/thelastofuspart1/mods/254]TLOU Infinite Ammo[/url].
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[b]Fluffy Mod Manager (recommended)[/b]
+[list=1]
+[*]Put [i]TLOUOutfitChanger-v1.0.0.zip[/i] in [i]Fluffy Mod Manager\Games\TLOU\Mods\[/i].
+[*]Open Fluffy and tick [b]TLOU Outfit Changer[/b]. Untick it to uninstall.
+[/list]
+
+[b]Manual[/b]
+[list=1]
+[*]Copy [i]xinput1_4.dll[/i] and [i]TLOUOutfitChanger.ini[/i] from the zip into the folder that contains [i]tlou-i.exe[/i]
+(e.g. [i]C:\Program Files (x86)\Steam\steamapps\common\The Last of Us Part I\[/i]).
+[*]To uninstall, delete [i]xinput1_4.dll[/i], [i]TLOUOutfitChanger.ini[/i] and [i]TLOUOutfitChanger.log[/i] from that folder.
+[/list]
+Install while the game is closed. Use either Fluffy or a manual install, not both. [i]modinfo.ini[/i] and [i]screenshot.png[/i] in the zip are only for Fluffy.
+
+[size=4][b]Check that it works[/b][/size]
+After starting the game, [i]TLOUOutfitChanger.log[/i] in the game folder ends with [i]installed: Skins menus open, every skin owned[/i], and Extras > Skins opens with every skin unlocked.
+
+[size=4][b]Settings[/b][/size] ([i]TLOUOutfitChanger.ini[/i])
+[list]
+[*][b]UnlockAllSkins[/b]=1 — Skins menus open and every skin owned. 0 = the game's own locks
+[*][b]Logging[/b]=1 — write [i]TLOUOutfitChanger.log[/i]
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+[list]
+[*][b]Tested:[/b] Steam, game version 1.1.4.0.
+[*][b]Not tested:[/b] Epic Games Store.
+[*]If a game update changes the code this mod relies on, it writes the reason to [i]TLOUOutfitChanger.log[/i] and [b]turns itself off[/b] instead of guessing.
+[*][b]TLOU Infinite Ammo:[/b] compatible. This mod loads as [i]xinput1_4.dll[/i], Infinite Ammo as [i]version.dll[/i].
+[*][b]Outfit and texture mods:[/b] compatible, since this mod changes no files. Mods that replace Ellie's or Joel's model change what a skin looks like, not whether it's unlocked.
+[*][b]Not compatible[/b] with other mods that also install an [i]xinput1_4.dll[/i] in the game folder.
+[/list]
+
+[size=4][b]Tested in-game[/b][/size]
+Extras > Skins opens on a profile that never finished the story, every skin shows as owned (including the bow, pistol and shotgun skins), Fluffy install, and running together with TLOU Infinite Ammo.
+[b]Not tested yet:[/b] the in-game (pause) Skins menu, outfits in cutscenes, outfit staying through deaths and chapter loads, controller input, removing the mod with an unlocked skin equipped, and tlou-i-l.exe. Reports welcome!
+
+[size=4][b]Troubleshooting[/b][/size]
+[list]
+[*][b]No log file appears:[/b] [i]xinput1_4.dll[/i] isn't next to [i]tlou-i.exe[/i].
+[*][b]Log says "Mod disabled":[/b] your game version isn't supported yet; the mod stayed off on purpose.
+[*][b]Log ends with UnlockAllSkins=0:[/b] it's turned off in the ini.
+[/list]
+
+[size=4][b]Open source[/b][/size]
+Full source code, tests and build instructions: [url=https://github.com/w1zr/TLOU-Outfit-Changer]github.com/w1zr/TLOU-Outfit-Changer[/url] (MIT license).
+It opens the Skins menu entries the same way the game does after the credits, and makes the game's "is this skin owned?" checks say yes. Your saves, points and the list of skins you bought are never changed.
+
+[i]Not affiliated with Naughty Dog or Sony Interactive Entertainment.[/i]

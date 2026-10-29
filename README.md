@@ -7,9 +7,10 @@ without finishing the story.
 
 - **Extras > Skins** in the main menu and the **Skins** entry in the in-game
   menu are open on any save, including a fresh profile.
-- Every skin is already owned, so you spend no points: all 74 entries in the
-  skins viewer, including the six bow, pistol and shotgun skins the Deluxe
-  Edition gives early.
+- Every skin is already owned, so you spend no points: every Ellie and Joel
+  outfit (33 for Ellie in the in-game menu), the backpacks and Ellie's hat, and
+  the weapon skins for Ellie's bow and pistol and Joel's 9mm and shotgun,
+  including the six the Deluxe Edition gives early.
 - It uses the game's own skin system and menus. No model or texture files are
   replaced.
 - Points, Gameplay Modifiers and trophies are not changed. The mod never
